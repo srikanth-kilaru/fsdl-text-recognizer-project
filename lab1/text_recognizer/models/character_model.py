@@ -16,6 +16,7 @@ class CharacterModel(Model):
         """Define the default dataset and network values for this model."""
         super().__init__(dataset_cls, network_fn, dataset_args, network_args)
 
+        
     def predict_on_image(self, image: np.ndarray) -> Tuple[str, float]:
         if image.dtype == np.uint8:
             image = (image / 255).astype(np.float32)
